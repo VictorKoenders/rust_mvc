@@ -6,12 +6,8 @@ mod config;
 
 pub use build::config::Config;
 
-use rustc_serialize::json;
-
 pub fn build(config: Config) {
 	let application = parser::parse(&config).unwrap();
-
-	println!("{}", json::encode(&application).unwrap());
 
 	for view in &application.views {
 		generator::generate_view_wrapper(view, &config);

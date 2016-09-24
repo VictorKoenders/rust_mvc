@@ -23,9 +23,7 @@ impl Server {
 				let url = format!("{}", req.uri);
 				let mut request = Request::new(url.clone());
 
-				println!("Request: {}", req.uri);
 				let result = controller_callback(&mut request);
-				println!("Result: {:?}", result);
 				let result = (result.0, match result.1 {
 					Err(e) => {
 						res.send(e.description().as_bytes()).unwrap();
@@ -34,16 +32,13 @@ impl Server {
 					Ok(r) => r
 				});
 
-				println!("Result: {:?}", result);
-
 				let view_result = match result.1 {
 					ViewResultEnum::CurrentView => view_callback(result.0.to_string()),
 					ViewResultEnum::CurrentViewWithModel(model) => view_model_callback(result.0.to_string(), model),
 					ViewResultEnum::SpecificView(view) => view_callback(view),
 					ViewResultEnum::SpecificViewWithModel(view, model) => view_model_callback(view, model),
 				};
-				println!("view result: {:?}", view_result);
-
+				
 				match view_result {
 					Some(r) => res.send(r.as_bytes()).unwrap(),
 					None => res.send(b"<html><body><h1>Page not found</h1></body></html>").unwrap()

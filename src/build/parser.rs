@@ -103,7 +103,7 @@ fn find_attributes(ast: &Vec<Token>, start: usize, end: usize) -> Vec<(String, V
 						if name.len() == 0 { name = n.as_str().to_string(); } else { args.push(n.as_str().to_string()); }
 					},
 					x => {
-						println!("Unknown lit: {:?}", x);
+						panic!("Unknown lit: {:?}", x);
 					}
 				}
 			},

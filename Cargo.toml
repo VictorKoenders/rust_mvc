@@ -3,5 +3,7 @@ name = "rust_mvc"
 version = "0.1.0"
 authors = ["Victor Koenders <victor.koenders@gmail.com>"]
 
-[dependencies]
-hyper = "*"
+[dependencies.hyper]
+version = "*"
+default-features = false
+features = []
