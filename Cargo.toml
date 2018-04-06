@@ -1,6 +1,6 @@
 [package]
 name = "rust_mvc"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Victor Koenders <victor.koenders@gmail.com>"]
 description = "This crate is orphaned. If you want to claim this crate, please contact \"Trangar\" on IRC"
 license = "MIT"
