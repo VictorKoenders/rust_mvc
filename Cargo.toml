@@ -2,8 +2,5 @@
 name = "rust_mvc"
 version = "0.1.0"
 authors = ["Victor Koenders <victor.koenders@gmail.com>"]
-
-[dependencies.hyper]
-version = "*"
-default-features = false
-features = []
+description = "This crate is orphaned. If you want to claim this crate, please contact \"Trangar\" on IRC"
+license = "MIT"
